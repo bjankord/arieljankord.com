@@ -3,29 +3,58 @@ layout: layouts/base.njk
 section: post
 ---
 
-<article>
-  <h1>{{ title }}</h1>
-  <p>
-    <small>
-      <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by <a href="/authors/{{ author | slug }}/">{{ author }}</a>
-    </small>
-  </p>
+<div class="body">
+  <div class="container">
+    <div class="blog-container">
+      <main class="blog-main">
+        <article>
+          <h1>{{ title }}</h1>
+          <p>
+            <small>
+              <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by <a href="/about/">{{ author }}</a>
+            </small>
+          </p>
 
-  {{ layoutContent | safe }}
+          {{ layoutContent | safe }}
 
-  {% if tags %}
-    <p>
-    {% for tag in tags %}
-      {%- if tag != "post" -%}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-      {%- endif -%}
-    {% endfor %}
-    </p>
-  {% endif %}
-
-</article>
-
-<nav>
-  <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>
+          {% if tags %}
+            <p>
+            {% for tag in tags %}
+              {%- if tag != "post" -%}
+                {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+                <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+              {%- endif -%}
+            {% endfor %}
+            </p>
+          {% endif %}
+        </article>
+        <nav>
+          <a href="{{ '/blog/' | url }}">← Blog index</a>
+        </nav>
+      </main>
+      <aside class="blog-aside">
+        <div class="aside-card profile">
+          <img src="../../static/img/ariel.jpg" class="profile-pic" alt="Ariel Jankord">
+          <p>God #1, wife, mother of twins & teacher | Apple teacher | @Seesaw Ambassador | Google Ed Cert Level 2 | MIE Educator | CS PLN leader | #ISTE Certified</p>
+        </div>
+        <div class="aside-card twitter-feed">
+          <h2>Twitter Feed</h2>
+          <a class="twitter-timeline" height="600" href="https://twitter.com/MrsJankord?ref_src=twsrc%5Etfw">Tweets by MrsJankord</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="aside-card recent-posts">
+          <h2>Recent Posts</h2>
+          {% set postslist = collections.post %}
+          {% include "components/recentpostslist.njk" %}
+        </div>
+        <div class="aside-card tag-list">
+          <h2>Tags</h2>
+          {% for tag in collections.tagList | sort %}
+            {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+            <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </aside>
+    </div>
+  </div>
+  {% include "components/footer.njk" %}
+</div>

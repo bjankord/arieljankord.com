@@ -10,6 +10,10 @@ module.exports = function(eleventyConfig) {
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  eleventyConfig.addFilter("limit", function (array, limit) {
+    return array.slice(0, limit);
+  });
+
   // Configuration API: use eleventyConfig.addLayoutAlias(from, to) to add
   // layout aliases! Say you have a bunch of existing content using
   // layout: post. If you don’t want to rewrite all of those values, just map
@@ -66,6 +70,9 @@ module.exports = function(eleventyConfig) {
       remove: /[*+~.·,()'"`´%!?¿:@]/g
     });
   });
+
+  eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
+
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("favicon.ico");

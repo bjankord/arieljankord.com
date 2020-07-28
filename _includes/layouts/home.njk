@@ -1,6 +1,432 @@
 ---
 layout: layouts/base.njk
 section: home
+permalink: /home/index.html
 ---
 
-{{ layoutContent | safe }}
+<style>
+.block-revealer__element {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.dual {
+	width: 90vw;
+	margin: 4em auto 10vh;
+	position: relative;
+}
+
+.dual__inner {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.dual__half {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	right: 0;
+	background-position: 50% 0%;
+  background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.dual__content {
+	position: relative;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 500px;
+	padding: 1.5em 2.5em;
+	font-size: 1.4em;
+	line-height: 1.4;
+}
+
+.js .dual__content {
+	opacity: 0;
+	pointer-events: none;
+	transform: translate3d(60px,0,0);
+	transition: opacity 0.55s 0.4s, transform 0.55s 0.4s;
+}
+
+.dual__content.dual__content--show {
+	opacity: 1;
+	pointer-events: visible;
+	transform: translate3d(0,0,0);
+}
+
+.dual__content h2 {
+  color: inherit;
+}
+
+.dual--flipped .dual__half {
+  right: auto;
+  left: 0;
+}
+
+.dual--flipped .dual__content {
+  transform: translate3d(90%,0,0);
+}
+
+.dual--flipped .dual__content.dual__content--show {
+  transform: translate3d(100%,0,0);
+}
+
+.author {
+	margin: 1em 0 0 0;
+	display: block;
+	font-size: 0.65em;
+}
+
+/* Content */
+.content {
+	position: relative;
+	min-height: 300px;
+	overflow-x: hidden;
+}
+a.link-button {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.link-button-wrapper {
+    margin-top: 2.500rem;
+}
+
+.link-center {
+  text-align: center;
+}
+
+/* Narrow Viewport Styles */
+@media only screen and (max-width: 1023px) {
+  .block-revealer__content {
+    display: none;
+  }
+
+  .dual__content {
+    width: 100% !important;
+  }
+
+  .block-revealer__element {
+    transform: scale(1) !important;
+  }
+
+  .dual--flipped .dual__half {
+    right: auto;
+    left: 0;
+  }
+
+  .dual--flipped .dual__content {
+    transform: translate3d(10%,0,0);
+  }
+
+  .dual--flipped .dual__content.dual__content--show {
+    transform: translate3d(0,0,0);
+  }
+}
+</style>
+
+<section class="content">
+  <div class="dual">
+    <div class="dual__inner" id="section-1">
+      <div class="dual__half" style="background-image: url(/static/img/ariel-collage.png);"></div>
+    </div>
+    <div class="dual__content" style="color: #fff">
+      <h2>Learner</h2>
+      <p class=" ">As an educator, I have taken ownership of my professional development through reading, building a global PLN, and attending conferences. I seek to learn about technology resources and tools that allow students to be producers rather than purely consumers.</p>
+      <ul>
+        <li class=" ">Certified Apple Teacher</li>
+        <li class=" ">Certified Microsoft Innovative Educator</li>
+        <li class=" ">Certified Google Educator Level 2</li>
+        <li class=" ">Flipgrid Certified</li>
+        <li class=" ">Seesaw Ambassador</li>
+        <li class=" ">Certified ISTE Educator</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="dual dual--flipped">
+    <div class="dual__inner" id="section-2">
+      <div class="dual__half" style="background-image: url(/static/img/ed-camp-joco.png);"></div>
+    </div>
+    <div class="dual__content" style="color: #000">
+      <h2>Leader</h2>
+      <p>In the past, I believed that as a teacher, leaders would tell me what was best for me and what I needed to know. As I began to serve on committees like Building Leadership Team and the Interdisciplinary Team, I realized I had a lot to offer. I began presenting at local conferences and organizing teacher meet ups. My leadership as a teacher has led to opportunities that allow me to advocate for students and teachers.</p>
+      <ul>
+        <li class=" ">Founder of Johnson County Edcamp</li>
+        <li class=" ">Co-Founder of Teacher Talk Olathe</li>
+        <li class=" ">Olathe Spark Starters Podcast Editor</li>
+        <li class=" ">METC Advisory Council</li>
+        <li class=" ">Making It Happen Awardee 2019</li>
+      </ul>
+      <div class="video-embed">
+        <iframe src="https://youtube.com/embed/lJ85ZLsQIfg?enablejsapi=1" frameborder="0" data-href="https://youtu.be/lJ85ZLsQIfg"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="dual">
+    <div class="dual__inner" id="section-3">
+      <div class="dual__half" style="background-image: url(/static/img/classroom1.png);"></div>
+    </div>
+    <div class="dual__content">
+      <h2>Citizen</h2>
+      <p>It is my passion to empower kids and motivate them to take ownership in their learning. My students have connected with classrooms all over the world through Skype and Flipgrid. We have participated in Global Read Aloud and Mystery Skype. Using Project Based Learning, Skype has become a necessity to connect with authors, local businesses, scientists, and inventors. I am committed to raising responsible digital citizens. In my classroom, we used Nearpod lessons supported by Common Sense Media to teach digital citizenship, along with Google's Be Internet Awesome resources.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="dual dual--flipped">
+    <div class="dual__inner" id="section-4">
+      <div class="dual__half" style="background-image: url(/static/img/conference-group.png);"></div>
+    </div>
+    <div class="dual__content">
+      <h2>Collaborator</h2>
+      <p>Within my district, I have a tribe of teachers that I collaborate on engagement strategies and best practices. By diversifying the people I surround myself by, I have become a stronger and more aware educator. Connections beyond my local community help me stay up to date in our ever-changing world of technology. Through blogging and Twitter I continue to grow my professional learning network globally.</p>
+      <p>Teaching kids to collaborate with one another using patience, eye contact and appropriate tone to be successful is one way I prepare kids for their future.</p>
+      <blockquote>Two heads are better than one, not because either is infallible, but because they are unlikely to go wrong in the same direction. <span>-C.S. Lewis</span></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="dual">
+    <div class="dual__inner" id="section-5">
+      <div class="dual__half" style="background-image: url(/static/img/tech-legos.png);"></div>
+    </div>
+    <div class="dual__content" style="color: #fff;">
+      <h2>Designer</h2>
+      <p>Students remember 20% of what they hear, 30% of what they see, and 90% of what they do.</p>
+      <p>Technology has opened the door for my students to be creative in a way I could've never imagined when I started teaching 10 years ago! When designing lessons, I utilize the design thinking process, project-based learning, and the workshop model to meet the unique needs of my students. Students are able to show their learning through authentic, hands-on, creative assessments. Here are a few of my student's favorite tools for innovation:</p>
+      <ul>
+        <li><b>Seesaw</b>: digital portfolio and parent connection</li>
+        <li><b>Flipgrid</b>: empower student voice and connect globally</li>
+        <li><b>Clips</b>: video presentation of learning</li>
+        <li><b>Scratch/Scratch Jr</b>: integrating coding while presenting content and storytelling</li>
+        <li><b>Sphero</b>: STEM, geometry and measurement</li>
+        <li><b>Tinker Cad</b>: 3D printing and prototypes</li>
+        <li><b>Makerspace Materials</b>: Legos, K'Nex, Magnatiles, and of course... cardboard.</li>
+      </ul>
+      <a href="https://www.podbean.com/eu/pb-wkfn5-b6ac78" rel="nofollow noreferrer" target="_blank">
+        <img style="width: 100%" src="/static/img/designer.png" alt="METC Podcast: Coding Across the Curriculum" />
+      </a>
+      <div class="link-button-wrapper link-center">
+        <a class="link-button " href="https://www.podbean.com/eu/pb-wkfn5-b6ac78" rel="nofollow noreferrer" target="_blank">Listen to the Podcast Here</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="dual dual--flipped">
+    <div class="dual__inner" id="section-6">
+      <div class="dual__half" style="background-image: url(/static/img/classroom2.png);"></div>
+    </div>
+    <div class="dual__content">
+      <h2>Facilitator</h2>
+      <p>Finding new ways to integrate technology in the classroom energizes me. Students in my classroom use iPads to communicate, enhance, and create products of their learning. Even though I have no computer science background, I have inspired my students to engage in CS. This is a risk I was willing to take because I deeply believe in the power of students having access to the principles of CS. My role quickly becomes facilitator as I take a backseat in student learning. With the support of free programs, like Scratch and Google CS First, my students are able to self-direct their learning.</p>
+      <p>Edcamp Johnson County and Teacher Talk Olathe were created from a facilitator stand point. I saw a need for teachers to have open ended time to collaborate with one another based on their individual needs. Both of these events foster a culture of teachers taking ownership in their learning.</p>
+      <a href="https://podcasts.apple.com/us/podcast/episode-27-ariel-jankord-and-edcamp-joco/id1434731186?i=1000433239875" rel="nofollow noreferrer" target="_blank">
+        <img style="width: 100%" src="/static/img/facilitator.png" alt="Kansas Moonshot Podcast Episode 27: Ariel Jankord and EdCamp JoCo" />
+      </a>
+      <div class="link-button-wrapper link-center">
+        <a class="link-button " href="https://podcasts.apple.com/us/podcast/episode-27-ariel-jankord-and-edcamp-joco/id1434731186?i=1000433239875" rel="nofollow noreferrer" target="_blank">Listen to Podcast Here</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="dual">
+    <div class="dual__inner" id="section-7">
+      <div class="dual__half" style="background-image: url(/static/img/tower-garden.png);"></div>
+    </div>
+    <div class="dual__content">
+      <h2>Analyst</h2>
+      <p>In order to keep growing we constantly have to be assessing what we are doing and whether it's working. Formative assessments have become an integral part of keeping my students on track. I use non-traditonal forms of assessement like, Fliphunts, BookSnaps, Book Movie Trailers, Seesaw Activities Feature, and Classkick. The data I collect from these assessments then guide my future instruction. I desire to learn more about personalized learning and have started incorporating elements that allow students to track their progress and set individual goals.</p>
+      <p>Part of assessing my work as a teacher and presenter is providing forms for students, parents, and conference attendees to reflect on my practice. I take this feedback very seriously and am always looking for ways to grow!</p>
+    </div>
+  </div>
+</section>
+
+
+<script src="/_includes/assets/js/anime.min.js"></script>
+<script src="https://unpkg.com/scrollmonitor@1.2.4/scrollMonitor.js"></script>
+<script src="/_includes/assets/js/main.js"></script>
+<script>
+(function() {
+  var splitContent1 = document.querySelector('#section-1 + .dual__content'),
+    section1 = new RevealFx(document.querySelector('#section-1'), {
+      revealSettings : {
+        bgcolor: '#1A535C',
+        direction: 'rl',
+        duration: 800,
+        easing: 'easeInOutCirc',
+        coverArea: 50,
+        onCover: function(contentEl, revealerEl) {
+          contentEl.style.opacity = 1;
+          splitContent1.classList.add('dual__content--show');
+        }
+      }
+    });
+
+  var splitContent2 = document.querySelector('#section-2 + .dual__content'),
+      section2 = new RevealFx(document.querySelector('#section-2'), {
+        revealSettings : {
+          bgcolor: '#4ECDC5',
+          // direction: 'rl',
+          duration: 800,
+          easing: 'easeInOutCirc',
+          coverArea: 50,
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+            splitContent2.classList.add('dual__content--show');
+          }
+        }
+      });
+
+  var splitContent3 = document.querySelector('#section-3 + .dual__content'),
+      section3 = new RevealFx(document.querySelector('#section-3'), {
+        revealSettings : {
+          bgcolor: '#FF6B6B',
+          direction: 'rl',
+          duration: 800,
+          easing: 'easeInOutCirc',
+          coverArea: 50,
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+            splitContent3.classList.add('dual__content--show');
+          }
+        }
+      });
+
+  var splitContent4 = document.querySelector('#section-4 + .dual__content'),
+      section4 = new RevealFx(document.querySelector('#section-4'), {
+        revealSettings : {
+          bgcolor: '#FFE66E',
+          // direction: 'rl',
+          duration: 800,
+          easing: 'easeInOutCirc',
+          coverArea: 50,
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+            splitContent4.classList.add('dual__content--show');
+          }
+        }
+      });
+
+  var splitContent5 = document.querySelector('#section-5 + .dual__content'),
+      section5 = new RevealFx(document.querySelector('#section-5'), {
+        revealSettings : {
+          bgcolor: '#1A535C',
+          direction: 'rl',
+          duration: 800,
+          easing: 'easeInOutCirc',
+          coverArea: 50,
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+            splitContent5.classList.add('dual__content--show');
+          }
+        }
+      });
+
+  var splitContent6 = document.querySelector('#section-6 + .dual__content'),
+      section6 = new RevealFx(document.querySelector('#section-6'), {
+        revealSettings : {
+          bgcolor: '#4ECDC5',
+          // direction: 'rl',
+          duration: 800,
+          easing: 'easeInOutCirc',
+          coverArea: 50,
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+            splitContent6.classList.add('dual__content--show');
+          }
+        }
+      });
+
+  var splitContent7 = document.querySelector('#section-7 + .dual__content'),
+      section7 = new RevealFx(document.querySelector('#section-7'), {
+        revealSettings : {
+          bgcolor: '#FF6B6B',
+          direction: 'rl',
+          duration: 800,
+          easing: 'easeInOutCirc',
+          coverArea: 50,
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+            splitContent7.classList.add('dual__content--show');
+          }
+        }
+      });
+
+    var containerElement = document.getElementById("main");
+
+    var containerMonitor = scrollMonitor.createContainer(containerElement);
+
+    var section1Elm = document.getElementById("section-1");
+    var section2Elm = document.getElementById("section-2");
+    var section3Elm = document.getElementById("section-3");
+    var section4Elm = document.getElementById("section-4");
+    var section5Elm = document.getElementById("section-5");
+    var section6Elm = document.getElementById("section-6");
+    var section7Elm = document.getElementById("section-7");
+    var elementWatcher1 = containerMonitor.create(section1Elm,  -300);
+    var elementWatcher2 = containerMonitor.create(section2Elm,  -300);
+    var elementWatcher3 = containerMonitor.create(section3Elm,  -300);
+    var elementWatcher4 = containerMonitor.create(section4Elm,  -300);
+    var elementWatcher5 = containerMonitor.create(section5Elm,  -300);
+    var elementWatcher6 = containerMonitor.create(section6Elm,  -300);
+    var elementWatcher7 = containerMonitor.create(section7Elm,  -300);
+
+
+
+
+  // Load first block on page load
+  section1.reveal();
+
+  // Scroll lisnters
+  elementWatcher2.enterViewport(function() {
+      section2.reveal();
+      elementWatcher2.destroy();
+  });
+
+  elementWatcher3.enterViewport(function() {
+      section3.reveal();
+      elementWatcher3.destroy();
+  });
+
+  elementWatcher4.enterViewport(function() {
+      section4.reveal();
+      elementWatcher4.destroy();
+  });
+
+  elementWatcher5.enterViewport(function() {
+      section5.reveal();
+      elementWatcher5.destroy();
+  });
+
+  elementWatcher6.enterViewport(function() {
+      section6.reveal();
+      elementWatcher6.destroy();
+  });
+
+  elementWatcher7.enterViewport(function() {
+      section7.reveal();
+      elementWatcher7.destroy();
+  });
+})();
+</script>

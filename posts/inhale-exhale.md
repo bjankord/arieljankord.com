@@ -5,13 +5,13 @@ author: Ariel Jankord
 tags:
   - Covid 19
   - Remote Learning
-  - Éducation
+  - Education
   - Education Technology
 ---
 
 Wow, what a whirlwind we are all in! Nearly every educational platform is offering free access to help out teachers. Virtual conferences, Edcamps, Youtube Tutorials are swarming feeds. Blog posts on how to survive remote learning are being promoted every second. The overload of information reminds me of one of my favorite songs…
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hnjeMwxFuBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="Breathe by Johnny Diaz" width="560" height="315" src="https://www.youtube.com/embed/hnjeMwxFuBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ![](../../static/img/inhel-exhel.jpeg)
 

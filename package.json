@@ -4,7 +4,7 @@
   "description": "Personal website of Ariel Jankord",
   "scripts": {
     "build": "npx eleventy",
-    "serve": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve",
     "watch": "npx eleventy --watch",
     "debug": "DEBUG=* npx eleventy"
   },

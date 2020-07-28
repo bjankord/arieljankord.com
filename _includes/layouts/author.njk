@@ -2,11 +2,12 @@
 layout: layouts/base.njk
 section: author
 ---
+<div class="container">
 <h1>{{ name }}</h1>
 
 <p><a href="mailto:{{ email }}">{{ email }}</a></p>
-<p><a href="{{ github }}">View on GitHub</a></p>
 
 <nav>
   <a href="{{ '/blog/' | url }}">← Blog index</a>
 </nav>
+</div>
